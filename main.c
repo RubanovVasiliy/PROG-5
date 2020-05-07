@@ -51,19 +51,11 @@ char * refresh(char * path, char * delim){
   for(int i=0 ;i<pathsCount;i++){
     tokensCount = stok(paths[i], '/', tokens);
 
-    //char * buf=tokens[2];
-    int error=1;
-    char* url_parts[4];
-    int url_p_count = stok(tokens[2], '.', url_parts);
-    if(url_p_count==2){
-      //printf(" %s\n",url_parts[1]);
-       if(!scmp(url_parts[1],domains[0]) || !scmp(url_parts[1],domains[1]) || !scmp(url_parts[1],domains[2])){
-          error=0;
-       }
-    } else if(url_p_count==4){}
+    printf(" %s ",tokens[2]);
+    char * buf=tokens[2];
+    printf(" %s\n",buf);
 
-
-    if((!scmp(tokens[0],protocols[0]) || !scmp(tokens[0],protocols[1])) && !error){
+    if(!scmp(tokens[0],protocols[0]) || !scmp(tokens[0],protocols[1])){
 
     
 
